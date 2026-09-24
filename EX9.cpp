@@ -3,7 +3,9 @@
 
 void *thread_function(void *arg)
 {
-    printf("Thread is running\n"); printf("Hello from the thread\n"); return NULL;
+    printf("Thread is running\n");
+    printf("Hello from the thread\n");
+    return NULL;
 }
 int main()
 {
