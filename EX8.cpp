@@ -15,8 +15,10 @@ int main()
         for(j=0;j<m;j++)
             scanf("%d",&allocation[i][j]);
 
-    printf("Enter Request Matrix:\n"); for(i=0;i<n;i++)
-        for(j=0;j<m;j++) scanf("%d",&request[i][j]);
+    printf("Enter Request Matrix:\n");
+    for(i=0;i<n;i++)
+        for(j=0;j<m;j++)
+            scanf("%d",&request[i][j]);
 
     printf("Enter Available Resources:\n");
     for(i=0;i<m;i++)
