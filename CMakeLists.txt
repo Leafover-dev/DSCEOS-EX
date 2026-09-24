@@ -10,4 +10,7 @@ add_executable(untitled main.cpp
         EX5.cpp
         EX6.cpp
         EX7.cpp
-        EX8.cpp)
+        EX8.cpp
+        EX10.cpp
+        EX9.cpp
+)
