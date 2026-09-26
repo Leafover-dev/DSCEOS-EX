@@ -13,4 +13,5 @@ add_executable(untitled main.cpp
         EX8.cpp
         EX10.cpp
         EX9.cpp
+        EX12.cpp
 )
