@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-void sequential_allocation() {
+void sequential_allocation()
+{
     int start, size, i;
     printf("Enterstarting block: ");
     scanf("%d",&start);
@@ -11,7 +12,8 @@ void sequential_allocation() {
         printf("%d ",i);
     printf("\n");
 }
-void linked_allocation() {
+void linked_allocation()
+{
     int start, size, i, block;
     printf("Enterstarting block: ");
     scanf("%d",&start);
@@ -19,32 +21,39 @@ void linked_allocation() {
     scanf("%d",&size);
     printf("Allocated blocks and next pointers:\n");
     block = start;
-    for(i=0;i<size;i++) {
+    for(i=0;i<size;i++)
+    {
         int next;
         printf("Block %d -> ",block);
-        if(i != size-1) {
+        if(i != size-1)
+        {
             next = block + 1 + rand()%5; // random next block
             printf("%d\n", next);
             block = next;
-        } else {
+        }
+        else
+        {
             printf("NULL\n");
         }
     }
 }
-void indexed_allocation() {
+void indexed_allocation()
+{
     int indexBlock, size, i, block;
     printf("Enter index block number: ");
     scanf("%d",&indexBlock);
     printf("Enter file size (number of blocks): ");
     scanf("%d",&size);
     printf("Index Block %d points to blocks: ", indexBlock);
-    for(i=0;i<size;i++) {
+    for(i=0;i<size;i++)
+    {
         block = rand()%100; // random block number
         printf("%d ", block);
     }
     printf("\n");
 }
-int main() {
+int main()
+{
     int choice;
     do {
         printf("\nFile Allocation Strategies:\n");
@@ -54,7 +63,8 @@ int main() {
         printf("4. Exit\n");
         printf("Enter your choice: ");
         scanf("%d",&choice);
-        switch(choice) {
+        switch(choice)
+        {
             case 1:sequential_allocation(); break;
             case 2: linked_allocation(); break;
             case 3: indexed_allocation(); break;

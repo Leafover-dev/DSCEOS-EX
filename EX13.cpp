@@ -20,7 +20,7 @@ int main()
         return 1;
     }
 
-    printf("Enter number ofstudents: ");
+    printf("Enter number of students: ");
     scanf("%d",&n);
     for(i=0;i<n;i++) {
         printf("Enter Roll No, Name, Marks:\n");

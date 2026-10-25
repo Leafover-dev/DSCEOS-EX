@@ -8,8 +8,8 @@ void fcfs(int req[], int n, int head)
     for(i=0;i<n;i++)
     {
         printf("%d->",head);
-    seek += abs(head - req[i]);
-    head = req[i];
+        seek += abs(head - req[i]);
+        head = req[i];
     }
     printf("end\nTotal Seek Time = %d\n",seek);
 }
@@ -24,7 +24,8 @@ void sstf(int req[], int n, int head)
         min = 9999;
         for(j=0;j<n;j++)
         {
-            if(!visited[j] && abs(head - req[j]) < min){
+            if(!visited[j] && abs(head - req[j]) < min)
+            {
             min = abs(head - req[j]);
             pos = j;
         }
@@ -58,29 +59,33 @@ void scan(int req[], int n, int head, int disk_size, int direction)
     int index;
     for(i=0;i<n;i++) if(temp[i]==head){ index=i; break;}
         printf("Head movements: ");
-        if(direction==0){ // left
-        for(i=index;i>=0;i--)
+        if(direction==0)
+        { // left
+            for(i=index;i>=0;i--)
+            {
+                printf("%d->",temp[i]);
+                if(i>0) seek += abs(temp[i]-temp[i-1]);
+            }
+            for(i=index+1;i<n;i++)
+            {
+                printf("%d->",temp[i]);
+                if(i<n-1) seek += abs(temp[i]-temp[i-1]);
+            }
+    }
+    else
+    { // right
+        for(i=index;i<n;i++)
+        {
+            printf("%d->",temp[i]);
+            if(i<n-1) seek += abs(temp[i]-temp[i+1]);
+        }
+
+        for(i=index-1;i>=0;i--)
         {
             printf("%d->",temp[i]);
             if(i>0) seek += abs(temp[i]-temp[i-1]);
         }
-        for(i=index+1;i<n;i++){
-            printf("%d->",temp[i]);
-            if(i<n-1) seek += abs(temp[i]-temp[i-1]);
-        }
-} else { // right
-    for(i=index;i<n;i++)
-    {
-        printf("%d->",temp[i]);
-        if(i<n-1) seek += abs(temp[i]-temp[i+1]);
     }
-
-    for(i=index-1;i>=0;i--)
-    {
-        printf("%d->",temp[i]);
-        if(i>0) seek += abs(temp[i]-temp[i-1]);
-    }
-}
     printf("end\nTotal Seek Time = %d\n",seek);
 }
 
